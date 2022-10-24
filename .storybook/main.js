@@ -17,6 +17,7 @@ module.exports = {
          },
        },
      },
+    "storybook-addon-next"
   ],
   framework: "@storybook/react",
   core: {
