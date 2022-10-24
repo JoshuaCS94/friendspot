@@ -12,3 +12,5 @@ export default {
 } as ComponentMeta<typeof Button>
 
 export const Default = () => <Button>Button</Button>
+
+export const Disabled = () => <Button disabled>Button</Button>
