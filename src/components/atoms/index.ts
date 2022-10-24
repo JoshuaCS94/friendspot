@@ -1,2 +1,5 @@
 export * from './Button/Button'
 export * from './Tab/Tab'
+export * from './Image/Image'
+export * from './Badge/Badge'
+export * from './AvailabilityIndicator/AvailabilityIndicator'
