@@ -1,4 +1,10 @@
-import { Image, ImageProps, Button, Badge, AvailabilityIndicator } from '../../atoms'
+import {
+  Image,
+  ImageProps,
+  Button,
+  Badge,
+  AvailabilityIndicator,
+} from '../../atoms'
 
 export type UserCardProps = {
   image: ImageProps['src']
@@ -8,7 +14,13 @@ export type UserCardProps = {
   onSeeDetails?: () => void
 }
 
-export const UserCard = ({ image, available, name, tags, onSeeDetails }: UserCardProps) => (
+export const UserCard = ({
+  image,
+  available,
+  name,
+  tags,
+  onSeeDetails,
+}: UserCardProps) => (
   <div className='flex items-center gap-4 p-3 shadow-2xl'>
     <div className='relative [&>span]:!block'>
       <Image src={image} alt='user-picture' width={60} height={60} />

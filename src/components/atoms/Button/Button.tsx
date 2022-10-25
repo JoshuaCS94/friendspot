@@ -2,7 +2,12 @@ import { cn } from '#utils'
 
 export type ButtonProps = JSX.IntrinsicElements['button']
 
-export const Button = ({ disabled, children, className, ...props }: ButtonProps) => (
+export const Button = ({
+  disabled,
+  children,
+  className,
+  ...props
+}: ButtonProps) => (
   <button
     className={cn(
       'rounded border px-5 py-2',

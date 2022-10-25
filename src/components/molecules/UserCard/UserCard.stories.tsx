@@ -9,5 +9,11 @@ export default {
 } as ComponentMeta<typeof UserCard>
 
 export const Default = () => (
-  <UserCard image={testImg} available name='Jeremy Davis' tags={['At Work']} onSeeDetails={() => {}} />
+  <UserCard
+    image={testImg}
+    available
+    name='Jeremy Davis'
+    tags={['At Work']}
+    onSeeDetails={() => {}}
+  />
 )
