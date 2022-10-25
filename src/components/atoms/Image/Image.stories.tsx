@@ -1,7 +1,7 @@
 import { ComponentMeta } from '@storybook/react'
 
 import { Image } from './Image'
-import testImg from './test-img.png'
+import testImg from '../../_images/test-img.png'
 
 export default {
   title: 'atoms/Image',
@@ -13,3 +13,5 @@ export const Size24x24 = () => <Image src={testImg} width={24} height={24} alt='
 export const Size32x32 = () => <Image src={testImg} width={32} height={32} alt='test-image' />
 
 export const Size48x48 = () => <Image src={testImg} width={48} height={48} alt='test-image' />
+
+export const Size60x60 = () => <Image src={testImg} width={60} height={60} alt='test-image' />
