@@ -5,8 +5,15 @@ export type AvailabilityIndicatorProps = {
   className?: string
 }
 
-export const AvailabilityIndicator = ({ available, className }: AvailabilityIndicatorProps) => (
+export const AvailabilityIndicator = ({
+  available,
+  className,
+}: AvailabilityIndicatorProps) => (
   <div
-    className={cn('h-3 w-3 rounded-full border-2 border-white', available ? 'bg-green-400' : 'bg-gray-400', className)}
+    className={cn(
+      'h-3 w-3 rounded-full border-2 border-white',
+      available ? 'bg-green-400' : 'bg-gray-400',
+      className
+    )}
   />
 )
