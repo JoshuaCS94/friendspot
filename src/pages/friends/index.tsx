@@ -4,11 +4,11 @@ import { UserCard } from '#components/molecules'
 import { fetchAllFriends } from '#api/requests/friends'
 import { FriendSummary } from '#api/models'
 
-type HomeProps = {
+type FriendsPageProps = {
   friends: FriendSummary[]
 }
 
-const Home: NextPage<HomeProps> = ({ friends }) => {
+const FriendsPage: NextPage<FriendsPageProps> = ({ friends }) => {
   return (
     <div className='mx-auto flex h-screen max-w-xl flex-col px-4 py-12'>
       <h1 className='text-2xl font-bold text-indigo-300'>Friends</h1>
@@ -37,4 +37,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Home
+export default FriendsPage

@@ -14,6 +14,12 @@ const nextConfig = {
       },
     ],
   },
+  rewrites: () => [
+    {
+      source: '/',
+      destination: '/friends',
+    },
+  ],
 }
 
 module.exports = nextConfig
