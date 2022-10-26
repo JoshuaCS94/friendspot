@@ -48,7 +48,7 @@ export const UserDetailsCard = ({
     </div>
     <div>
       <p className='text-2xl font-bold'>{name}</p>
-      <div className='mt-2 flex min-w-0 items-center gap-2'>
+      <div className='mt-2 flex flex-wrap items-center gap-2'>
         {tags.map(t => (
           <Badge key={t}>{t}</Badge>
         ))}

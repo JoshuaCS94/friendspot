@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next'
+import { useRouter } from 'next/router'
 
 import { UserCard } from '#components/molecules'
 import { fetchAllFriends } from '#api/requests/friends'
@@ -9,8 +10,10 @@ type FriendsPageProps = {
 }
 
 const FriendsPage: NextPage<FriendsPageProps> = ({ friends }) => {
+  const router = useRouter()
+
   return (
-    <div className='mx-auto flex h-screen max-w-xl flex-col px-4 py-12'>
+    <div className='mx-auto flex h-screen max-w-xl flex-col md:px-4 md:py-12'>
       <h1 className='text-2xl font-bold text-indigo-300'>Friends</h1>
       <div className='flex grow flex-col gap-y-2 overflow-y-auto'>
         {friends.map(f => (
@@ -20,6 +23,7 @@ const FriendsPage: NextPage<FriendsPageProps> = ({ friends }) => {
             available={f.available}
             name={`${f.first_name} ${f.last_name}`}
             tags={[f.status]}
+            onSeeDetails={() => router.push(`/friends/${f.id}`)}
           />
         ))}
       </div>
