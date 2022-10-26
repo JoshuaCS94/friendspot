@@ -1,7 +1,6 @@
 import { ComponentMeta } from '@storybook/react'
 
 import { UserCard } from './UserCard'
-import testImg from '../../_images/test-img.png'
 
 export default {
   title: 'molecules/UserCard',
@@ -10,7 +9,7 @@ export default {
 
 export const Default = () => (
   <UserCard
-    image={testImg}
+    image='https://randomuser.me/api/portraits/men/1.jpg'
     available
     name='Jeremy Davis'
     tags={['At Work']}
