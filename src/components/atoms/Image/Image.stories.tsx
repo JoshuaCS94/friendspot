@@ -1,7 +1,8 @@
 import { ComponentMeta } from '@storybook/react'
 
 import { Image } from './Image'
-import testImg from '../../_images/test-img.png'
+
+const testImg = 'https://randomuser.me/api/portraits/men/1.jpg'
 
 export default {
   title: 'atoms/Image',
