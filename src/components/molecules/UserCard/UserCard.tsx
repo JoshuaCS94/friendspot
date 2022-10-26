@@ -1,4 +1,10 @@
-import { Image, ImageProps, Button, Badge, AvailabilityIndicator } from '../../atoms'
+import {
+  Image,
+  ImageProps,
+  Button,
+  Badge,
+  AvailabilityIndicator,
+} from '../../atoms'
 
 export type UserCardProps = {
   image: ImageProps['src']
@@ -8,18 +14,24 @@ export type UserCardProps = {
   onSeeDetails?: () => void
 }
 
-export const UserCard = ({ image, available, name, tags, onSeeDetails }: UserCardProps) => (
-  <div className='flex items-center gap-4 p-3 shadow-2xl'>
-    <div className='relative [&>span]:!block'>
+export const UserCard = ({
+  image,
+  available,
+  name,
+  tags,
+  onSeeDetails,
+}: UserCardProps) => (
+  <div className='flex items-center gap-4 p-3 shadow-lg'>
+    <div className='relative shrink-0 [&>span]:!block'>
       <Image src={image} alt='user-picture' width={60} height={60} />
       <AvailabilityIndicator
         available={available}
         className='absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2'
       />
     </div>
-    <div className='grow'>
+    <div className='grow truncate'>
       <p className='font-medium'>{name}</p>
-      <div className='mt-1 flex items-center gap-2'>
+      <div className='mt-1 flex min-w-0 items-center gap-2'>
         {tags.map(t => (
           <Badge key={t}>{t}</Badge>
         ))}

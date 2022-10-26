@@ -18,12 +18,20 @@ export type TabsProps = {
   onSelect?: (selected: number) => void
 }
 
-export const Tabs = ({ tabs, defaultSelected = 0, classNames, onSelect, children }: TabsProps) => {
+export const Tabs = ({
+  tabs,
+  defaultSelected = 0,
+  classNames,
+  onSelect,
+  children,
+}: TabsProps) => {
   const [selected, setSelected] = useState(defaultSelected)
 
   return (
     <div className={classNames?.root}>
-      <div className={cn('flex items-center gap-2', classNames?.containers?.tabs)}>
+      <div
+        className={cn('flex items-center gap-2', classNames?.containers?.tabs)}
+      >
         {tabs.map((t, i) => (
           <Tab
             key={t}
@@ -37,7 +45,9 @@ export const Tabs = ({ tabs, defaultSelected = 0, classNames, onSelect, children
           </Tab>
         ))}
       </div>
-      <div className={classNames?.containers?.content}>{children?.[selected]}</div>
+      <div className={classNames?.containers?.content}>
+        {children?.[selected]}
+      </div>
     </div>
   )
 }
