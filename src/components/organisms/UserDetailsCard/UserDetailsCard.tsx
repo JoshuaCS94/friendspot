@@ -70,7 +70,10 @@ export const UserDetailsCard = ({
       </div>
       <div className='grid grid-cols-2 gap-4 md:grid-cols-3'>
         {photos.map(p => (
-          <div key={p} className='transition-transform hover:scale-110'>
+          <button
+            key={p}
+            className='rounded transition-transform hover:scale-110 hover:outline hover:outline-blue-600'
+          >
             <Image
               src={p}
               alt='gallery-image'
@@ -78,7 +81,7 @@ export const UserDetailsCard = ({
               height={64}
               layout='responsive'
             />
-          </div>
+          </button>
         ))}
       </div>
     </Tabs>
