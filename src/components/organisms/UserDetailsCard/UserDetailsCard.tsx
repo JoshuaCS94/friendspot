@@ -70,14 +70,15 @@ export const UserDetailsCard = ({
       </div>
       <div className='grid grid-cols-2 gap-4 md:grid-cols-3'>
         {photos.map(p => (
-          <Image
-            key={p}
-            src={p}
-            alt='gallery-image'
-            width={64}
-            height={64}
-            layout='responsive'
-          />
+          <div key={p} className='transition-transform hover:scale-110'>
+            <Image
+              src={p}
+              alt='gallery-image'
+              width={64}
+              height={64}
+              layout='responsive'
+            />
+          </div>
         ))}
       </div>
     </Tabs>
