@@ -22,6 +22,7 @@ export type UserDetailsCardProps = {
     }
   }
   photos: Url[]
+  onSelectPhoto: (photo: Url) => void
 }
 
 export const UserDetailsCard = ({
@@ -31,6 +32,7 @@ export const UserDetailsCard = ({
   tags,
   info,
   photos,
+  onSelectPhoto,
 }: UserDetailsCardProps) => (
   <div className='flex max-w-lg flex-col gap-4 p-12 shadow-lg'>
     <div className='relative [&>span]:!block'>
@@ -73,6 +75,7 @@ export const UserDetailsCard = ({
           <button
             key={p}
             className='rounded transition-transform hover:scale-110 hover:outline hover:outline-blue-600'
+            onClick={() => onSelectPhoto(p)}
           >
             <Image
               src={p}
@@ -80,6 +83,7 @@ export const UserDetailsCard = ({
               width={64}
               height={64}
               layout='responsive'
+              objectFit='cover'
             />
           </button>
         ))}
