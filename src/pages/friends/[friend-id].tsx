@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next'
 import Link from 'next/link'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 
-import { UserDetailsCard } from '#components/organisms'
+import { UserDetailsCard, GalleryDialog } from '#components/organisms'
 import { fetchAllFriends, fetchFriend } from '#api/requests/friends'
 import { Friend } from '#api/models'
 
@@ -15,8 +16,22 @@ type FriendDetailsPageProps = {
 }
 
 const FriendDetailsPage: NextPage<FriendDetailsPageProps> = ({ friend }) => {
+  const [showPhotoDialog, setShowPhotoDialog] = useState(false)
+  const [selectedPhoto, setSelectedPhoto] = useState('')
+
+  const idx = Math.max(
+    0,
+    friend.photos.findIndex(p => p === selectedPhoto)
+  )
+
   return (
     <div className='mx-auto flex h-screen max-w-xl flex-col py-8'>
+      <GalleryDialog
+        open={showPhotoDialog}
+        onClose={() => setShowPhotoDialog(false)}
+        images={friend.photos}
+        selected={idx}
+      />
       <div className='px-8'>
         <Link href='/'>
           <a>
@@ -42,6 +57,10 @@ const FriendDetailsPage: NextPage<FriendDetailsPageProps> = ({ friend }) => {
           },
         }}
         photos={friend.photos}
+        onSelectPhoto={p => {
+          setSelectedPhoto(p)
+          setShowPhotoDialog(true)
+        }}
       />
     </div>
   )
