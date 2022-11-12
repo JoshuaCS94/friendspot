@@ -13,7 +13,7 @@ export const GalleryDialog = ({
 }: GalleryDialogProps) => {
   return (
     <Dialog {...props} classNames={{ container: 'h-[600px] w-[800px] !p-0' }}>
-      <Carousel defaultSelected={selected}>
+      <Carousel initial={selected}>
         {images.map(i => (
           <Image
             key={i}

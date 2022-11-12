@@ -1,18 +1,11 @@
-import {
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-  cloneElement,
-  Children,
-} from 'react'
+import { useEffect, useRef, useCallback, cloneElement, Children } from 'react'
 import { useEventListener } from 'usehooks-ts'
 
 import { cn } from '#utils'
 
 export type CarouselProps = {
   children: JSX.Element[]
-  defaultSelected?: number
+  initial?: number
   classNames?: {
     root?: string
     item?: string
@@ -21,11 +14,10 @@ export type CarouselProps = {
 
 export const Carousel = ({
   children,
-  defaultSelected = 0,
+  initial = 0,
   classNames,
 }: CarouselProps) => {
   const ref = useRef<HTMLDivElement>(null)
-  const [selected, setSelected] = useState(defaultSelected)
 
   const handleMoveRight = () => {
     if (ref.current?.firstElementChild)
@@ -37,13 +29,6 @@ export const Carousel = ({
       ref.current.scrollBy(-ref.current.firstElementChild.clientWidth, 0)
   }
 
-  const handleScroll = () => {
-    if (ref.current)
-      setSelected(
-        Math.round(ref.current.scrollLeft / ref.current.children[0].clientWidth)
-      )
-  }
-
   const handleMoveToElement = useCallback((idx: number) => {
     ref.current?.children[idx].scrollIntoView({
       block: 'nearest',
@@ -51,11 +36,24 @@ export const Carousel = ({
     })
   }, [])
 
-  useEventListener('scroll', handleScroll, ref)
+  const handleKeyDown = (e: KeyboardEvent) => {
+    switch (e.key) {
+      case 'ArrowRight':
+        e.preventDefault()
+        handleMoveRight()
+        break
+      case 'ArrowLeft':
+        e.preventDefault()
+        handleMoveLeft()
+        break
+    }
+  }
+
+  useEventListener('keydown', handleKeyDown)
 
   useEffect(() => {
-    handleMoveToElement(defaultSelected)
-  }, [defaultSelected, handleMoveToElement])
+    handleMoveToElement(initial)
+  }, [initial, handleMoveToElement])
 
   return (
     <div className={cn('overflow-hidden', classNames?.root)}>
