@@ -22,6 +22,7 @@ export type UserDetailsCardProps = {
     }
   }
   photos: Url[]
+  onSelectPhoto: (photo: Url) => void
 }
 
 export const UserDetailsCard = ({
@@ -31,8 +32,9 @@ export const UserDetailsCard = ({
   tags,
   info,
   photos,
+  onSelectPhoto,
 }: UserDetailsCardProps) => (
-  <div className='flex max-w-lg flex-col gap-4 p-12 shadow-lg'>
+  <div className='flex w-[500px] flex-col gap-4 p-12 shadow-lg'>
     <div className='relative [&>span]:!block'>
       <Image
         src={image}
@@ -48,7 +50,7 @@ export const UserDetailsCard = ({
     </div>
     <div>
       <p className='text-2xl font-bold'>{name}</p>
-      <div className='mt-2 flex min-w-0 items-center gap-2'>
+      <div className='mt-2 flex flex-wrap items-center gap-2'>
         {tags.map(t => (
           <Badge key={t}>{t}</Badge>
         ))}
@@ -70,14 +72,20 @@ export const UserDetailsCard = ({
       </div>
       <div className='grid grid-cols-2 gap-4 md:grid-cols-3'>
         {photos.map(p => (
-          <Image
+          <button
             key={p}
-            src={p}
-            alt='gallery-image'
-            width={64}
-            height={64}
-            layout='responsive'
-          />
+            className='w-fit rounded transition-transform hover:scale-110 hover:outline hover:outline-blue-600'
+            onClick={() => onSelectPhoto(p)}
+          >
+            <Image
+              src={p}
+              alt='gallery-image'
+              width={128}
+              height={128}
+              objectFit='cover'
+              className='!block'
+            />
+          </button>
         ))}
       </div>
     </Tabs>

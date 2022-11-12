@@ -10,10 +10,16 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'flic.kr',
+        hostname: 'www.figma.com',
       },
     ],
   },
+  rewrites: () => [
+    {
+      source: '/',
+      destination: '/friends',
+    },
+  ],
 }
 
 module.exports = nextConfig
