@@ -60,7 +60,7 @@ const FriendDetailsPage: NextPage<FriendDetailsPageProps> = ({ friend }) => {
         open={showPhotoDialog}
         onClose={() => setShowPhotoDialog(false)}
         images={friend.photos}
-        selected={idx}
+        defaultSelected={idx}
       />
     </div>
   )

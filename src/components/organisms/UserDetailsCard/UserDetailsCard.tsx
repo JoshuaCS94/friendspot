@@ -74,7 +74,7 @@ export const UserDetailsCard = ({
         {photos.map(p => (
           <button
             key={p}
-            className='rounded transition-transform hover:scale-110 hover:outline hover:outline-blue-600'
+            className='w-fit rounded transition-transform hover:scale-110 hover:outline hover:outline-blue-600'
             onClick={() => onSelectPhoto(p)}
           >
             <Image
