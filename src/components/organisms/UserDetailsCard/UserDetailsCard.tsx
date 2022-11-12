@@ -34,7 +34,7 @@ export const UserDetailsCard = ({
   photos,
   onSelectPhoto,
 }: UserDetailsCardProps) => (
-  <div className='flex max-w-lg flex-col gap-4 p-12 shadow-lg'>
+  <div className='flex w-[500px] flex-col gap-4 p-12 shadow-lg'>
     <div className='relative [&>span]:!block'>
       <Image
         src={image}
@@ -80,10 +80,10 @@ export const UserDetailsCard = ({
             <Image
               src={p}
               alt='gallery-image'
-              width={64}
-              height={64}
-              layout='responsive'
+              width={128}
+              height={128}
               objectFit='cover'
+              className='!block'
             />
           </button>
         ))}

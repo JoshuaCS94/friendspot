@@ -26,12 +26,6 @@ const FriendDetailsPage: NextPage<FriendDetailsPageProps> = ({ friend }) => {
 
   return (
     <div className='mx-auto flex h-screen max-w-xl flex-col py-8'>
-      <GalleryDialog
-        open={showPhotoDialog}
-        onClose={() => setShowPhotoDialog(false)}
-        images={friend.photos}
-        selected={idx}
-      />
       <div className='px-8'>
         <Link href='/'>
           <a>
@@ -61,6 +55,12 @@ const FriendDetailsPage: NextPage<FriendDetailsPageProps> = ({ friend }) => {
           setSelectedPhoto(p)
           setShowPhotoDialog(true)
         }}
+      />
+      <GalleryDialog
+        open={showPhotoDialog}
+        onClose={() => setShowPhotoDialog(false)}
+        images={friend.photos}
+        selected={idx}
       />
     </div>
   )
