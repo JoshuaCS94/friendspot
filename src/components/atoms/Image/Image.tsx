@@ -5,5 +5,12 @@ import { cn } from '#utils'
 export type ImageProps = NextImageProps
 
 export const Image = ({ className, ...props }: ImageProps) => (
-  <NextImage className={cn('!rounded', className)} {...props} />
+  <div
+    className={cn(
+      '!rounded [&>span]:!block [&>span]:overflow-hidden',
+      className
+    )}
+  >
+    <NextImage {...props} />
+  </div>
 )

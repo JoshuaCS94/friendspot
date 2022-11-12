@@ -1,4 +1,3 @@
-import 'keen-slider/keen-slider.min.css'
 import '../src/styles.css'
 
 export const parameters = {
