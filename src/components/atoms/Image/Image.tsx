@@ -5,12 +5,12 @@ import { cn } from '#utils'
 export type ImageProps = NextImageProps
 
 export const Image = ({ className, ...props }: ImageProps) => (
-  <div
+  <span
     className={cn(
-      '!rounded [&>span]:!block [&>span]:overflow-hidden',
+      'flex w-fit [&>span]:!block [&>span]:overflow-hidden [&>span]:!rounded',
       className
     )}
   >
     <NextImage {...props} />
-  </div>
+  </span>
 )
