@@ -10,6 +10,8 @@ export const AvailabilityIndicator = ({
   className,
 }: AvailabilityIndicatorProps) => (
   <div
+    title='availability'
+    role='status'
     className={cn(
       'h-3 w-3 rounded-full border-2 border-white',
       available ? 'bg-green-400' : 'bg-gray-400',
