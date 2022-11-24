@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import { Button } from './Button'
 
@@ -40,7 +41,7 @@ describe('Components', () => {
 
       const el = screen.getByRole('button')
 
-      fireEvent.click(el)
+      userEvent.click(el)
 
       expect(handleClick).toBeCalled()
     })
@@ -52,7 +53,7 @@ describe('Components', () => {
 
       const el = screen.getByRole('button')
 
-      fireEvent.click(el)
+      userEvent.click(el)
 
       expect(handleClick).toBeCalledTimes(1)
     })
@@ -68,7 +69,7 @@ describe('Components', () => {
 
       const el = screen.getByRole('button')
 
-      fireEvent.click(el)
+      userEvent.click(el)
 
       expect(handleClick).toHaveBeenCalledTimes(0)
     })
