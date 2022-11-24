@@ -30,6 +30,7 @@ export const Tabs = ({
   return (
     <div className={classNames?.root}>
       <div
+        role='tablist'
         className={cn('flex items-center gap-2', classNames?.containers?.tabs)}
       >
         {tabs.map((t, i) => (
