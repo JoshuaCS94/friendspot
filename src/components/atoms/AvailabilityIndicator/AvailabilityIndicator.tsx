@@ -1,4 +1,4 @@
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 export type AvailabilityIndicatorProps = {
   available: boolean

@@ -2,7 +2,7 @@ import { Fragment, PropsWithChildren } from 'react'
 import { Dialog as HeadlessDialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 export type DialogProps = PropsWithChildren<{
   open: boolean

@@ -1,6 +1,6 @@
 import NextImage, { ImageProps as NextImageProps } from 'next/image'
 
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 export type ImageProps = NextImageProps
 

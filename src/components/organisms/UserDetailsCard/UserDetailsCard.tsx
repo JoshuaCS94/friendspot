@@ -2,7 +2,7 @@ import { Image, Badge, AvailabilityIndicator } from '../../atoms'
 import { Tabs } from '../../molecules'
 
 import { Url } from '#api/models'
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 const TABS = ['Info', 'Photos']
 

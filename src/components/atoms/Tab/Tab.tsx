@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 export type TabProps = PropsWithChildren<{
   active: boolean

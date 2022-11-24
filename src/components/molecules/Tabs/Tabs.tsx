@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Tab } from '../../atoms'
 
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 export type TabsProps = {
   tabs: string[]

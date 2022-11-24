@@ -1,4 +1,4 @@
-import { cn } from '../'
+import { cn } from '../misc'
 
 describe('cn', () => {
   it('should join all three classes separated by a space', () => {
