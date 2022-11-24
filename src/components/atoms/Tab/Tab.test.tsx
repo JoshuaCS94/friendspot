@@ -30,5 +30,21 @@ describe('Components', () => {
       expect(handleClick).toBeCalled()
       expect(handleClick).toBeCalledTimes(1)
     })
+
+    it('should be selected if active is true', () => {
+      render(<Tab active>Test Tab</Tab>)
+
+      const el = screen.getByRole('tab')
+
+      expect(el).toHaveAttribute('aria-selected', 'true')
+    })
+
+    it('should be unselected if active is false', () => {
+      render(<Tab active={false}>Test Tab</Tab>)
+
+      const el = screen.getByRole('tab')
+
+      expect(el).toHaveAttribute('aria-selected', 'false')
+    })
   })
 })
