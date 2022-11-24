@@ -8,7 +8,7 @@ describe('Components', () => {
     it('should render the text passed into', () => {
       render(<Tab active>Test Tab</Tab>)
 
-      const el = screen.getByRole('button')
+      const el = screen.getByRole('tab')
 
       expect(el).toBeInTheDocument()
       expect(el).toHaveTextContent('Test Tab')
@@ -23,7 +23,7 @@ describe('Components', () => {
         </Tab>
       )
 
-      const el = screen.getByRole('button')
+      const el = screen.getByRole('tab')
 
       userEvent.click(el)
 
