@@ -40,7 +40,7 @@ describe('Components', () => {
 
       const img = screen.getByRole('img')
 
-      expect(img).toHaveAccessibleName('gallery-photo-1')
+      expect(img).toHaveAccessibleName('gallery-image-1')
     })
 
     it('should render next image after pressing right when current image is not the last one', () => {
@@ -57,7 +57,7 @@ describe('Components', () => {
 
       const img = screen.getByRole('img')
 
-      expect(img).toHaveAccessibleName('gallery-photo-1')
+      expect(img).toHaveAccessibleName('gallery-image-1')
     })
 
     it('should still render the last image after pressing right if current image is the last one', () => {
@@ -74,7 +74,7 @@ describe('Components', () => {
 
       const img = screen.getByRole('img')
 
-      expect(img).toHaveAccessibleName(`gallery-photo-${IMAGES.length - 1}`)
+      expect(img).toHaveAccessibleName(`gallery-image-${IMAGES.length - 1}`)
     })
 
     it('should render previous image after pressing left if current image is not the first one', () => {
@@ -91,7 +91,7 @@ describe('Components', () => {
 
       const img = screen.getByRole('img')
 
-      expect(img).toHaveAccessibleName('gallery-photo-1')
+      expect(img).toHaveAccessibleName('gallery-image-1')
     })
 
     it('should still render the first image after pressing left if current image is the first one', () => {
@@ -108,7 +108,7 @@ describe('Components', () => {
 
       const img = screen.getByRole('img')
 
-      expect(img).toHaveAccessibleName(`gallery-photo-0`)
+      expect(img).toHaveAccessibleName(`gallery-image-0`)
     })
   })
 })

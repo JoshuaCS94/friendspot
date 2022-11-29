@@ -50,14 +50,16 @@ export const UserDetailsCard = ({
     </div>
     <div>
       <p className='text-2xl font-bold'>{name}</p>
-      <div className='mt-2 flex flex-wrap items-center gap-2'>
+      <ul title='tags' className='mt-2 flex flex-wrap items-center gap-2'>
         {tags.map(t => (
-          <Badge key={t}>{t}</Badge>
+          <li key={t} className='contents'>
+            <Badge>{t}</Badge>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
     <Tabs tabs={TABS} classNames={{ containers: { content: 'mt-4' } }}>
-      <div className='flex flex-col divide-y'>
+      <div role='tabpanel' className='flex flex-col divide-y'>
         <div className='pb-4'>
           <div className='text-indigo-300 md:mb-2'>Bio:</div>
           <p>{info.bio}</p>
@@ -70,8 +72,8 @@ export const UserDetailsCard = ({
           <Info title='Zip Code:' text={info.location.zipCode} />
         </div>
       </div>
-      <div className='grid grid-cols-2 gap-4 md:grid-cols-3'>
-        {photos.map(p => (
+      <div role='tabpanel' className='grid grid-cols-2 gap-4 md:grid-cols-3'>
+        {photos.map((p, i) => (
           <button
             key={p}
             className='w-fit rounded transition-transform hover:scale-110 hover:outline hover:outline-blue-600'
@@ -79,7 +81,7 @@ export const UserDetailsCard = ({
           >
             <Image
               src={p}
-              alt='gallery-image'
+              alt={`gallery-image-${i}`}
               width={128}
               height={128}
               objectFit='cover'
