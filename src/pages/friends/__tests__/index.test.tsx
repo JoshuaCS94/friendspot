@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 
 import { ALL_FRIENDS } from '#mocks/data/friends'
 
-import FriendsPage, { getStaticProps } from '../index'
+import FriendsPage, { getStaticProps } from '../index.page'
 
 const push = jest.fn()
 

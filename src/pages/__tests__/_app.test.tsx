@@ -1,7 +1,7 @@
 import { Router } from 'next/router'
 import { render } from '@testing-library/react'
 
-import App from '../_app'
+import App from '../_app.page'
 
 const TestComponent = () => null
 

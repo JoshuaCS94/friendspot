@@ -6,7 +6,7 @@ import { ALL_FRIENDS, FRIEND_DETAILS } from '#mocks/data/friends'
 import FriendDetailsPage, {
   getStaticProps,
   getStaticPaths,
-} from '../[friend-id]'
+} from '../[friend-id].page'
 
 const push = jest.fn()
 
