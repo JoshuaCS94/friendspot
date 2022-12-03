@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Tab } from '../../atoms'
 
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 export type TabsProps = {
   tabs: string[]
@@ -30,6 +30,7 @@ export const Tabs = ({
   return (
     <div className={classNames?.root}>
       <div
+        role='tablist'
         className={cn('flex items-center gap-2', classNames?.containers?.tabs)}
       >
         {tabs.map((t, i) => (

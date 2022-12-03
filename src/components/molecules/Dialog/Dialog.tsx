@@ -2,7 +2,7 @@ import { Fragment, PropsWithChildren } from 'react'
 import { Dialog as HeadlessDialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-import { cn } from '#utils'
+import { cn } from '#utils/misc'
 
 export type DialogProps = PropsWithChildren<{
   open: boolean
@@ -36,14 +36,14 @@ export const Dialog = ({
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <HeadlessDialog.Overlay className='fixed inset-0 bg-gray-500/75 transition-opacity'>
+            <div className='fixed inset-0 bg-gray-500/75 transition-opacity'>
               <button
                 className='absolute right-8 top-8 rounded bg-gray-400 p-2 text-white hover:bg-gray-500'
                 onClick={onClose}
               >
                 <XMarkIcon width={16} height={16} />
               </button>
-            </HeadlessDialog.Overlay>
+            </div>
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -54,14 +54,14 @@ export const Dialog = ({
             leaveFrom='opacity-100 translate-y-0 sm:scale-100'
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
-            <div
+            <HeadlessDialog.Panel
               className={cn(
                 'transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all sm:my-8 sm:p-6 sm:align-middle',
                 classNames?.container
               )}
             >
               {children}
-            </div>
+            </HeadlessDialog.Panel>
           </Transition.Child>
         </div>
       </HeadlessDialog>

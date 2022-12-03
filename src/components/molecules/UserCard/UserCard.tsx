@@ -31,11 +31,13 @@ export const UserCard = ({
     </div>
     <div className='grow truncate'>
       <p className='font-medium'>{name}</p>
-      <div className='mt-1 flex min-w-0 items-center gap-2'>
+      <ul title='tags' className='mt-1 flex min-w-0 items-center gap-2'>
         {tags.map(t => (
-          <Badge key={t}>{t}</Badge>
+          <li key={t} className='contents'>
+            <Badge>{t}</Badge>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
     <Button onClick={onSeeDetails} className='mr-2'>
       Details

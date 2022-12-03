@@ -15,23 +15,27 @@ const FriendsPage: NextPage<FriendsPageProps> = ({ friends }) => {
   return (
     <div className='mx-auto flex h-screen max-w-xl flex-col md:px-4 md:py-12'>
       <h1 className='text-2xl font-bold text-indigo-300'>Friends</h1>
-      <div className='flex grow flex-col gap-y-2 overflow-y-auto'>
+      <ul
+        title='friends'
+        className='flex grow flex-col gap-y-2 overflow-y-auto'
+      >
         {friends.map(f => (
-          <UserCard
-            key={f.id}
-            image={f.img}
-            available={f.available}
-            name={`${f.first_name} ${f.last_name}`}
-            tags={[f.status]}
-            onSeeDetails={() => router.push(`/friends/${f.id}`)}
-          />
+          <li key={f.id}>
+            <UserCard
+              image={f.img}
+              available={f.available}
+              name={`${f.first_name} ${f.last_name}`}
+              tags={[f.status]}
+              onSeeDetails={() => router.push(`/friends/${f.id}`)}
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<FriendsPageProps> = async () => {
   const friends = await fetchAllFriends()
 
   return {

@@ -37,7 +37,7 @@ export const GalleryDialog = ({
     <Dialog {...props} classNames={{ container: 'h-[600px] w-[800px] !p-0' }}>
       <Image
         src={images[selected]}
-        alt='gallery-photo'
+        alt={`gallery-image-${selected}`}
         width={800}
         height={600}
         objectFit='contain'
