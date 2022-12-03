@@ -20,7 +20,7 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/**/*'],
-  coveragePathIgnorePatterns: ['.*\\.stories\\.[jt]sx?', 'index\\.[jt]sx?'],
+  coveragePathIgnorePatterns: ['.*\\.stories\\.[jt]sx?', '/index\\.[jt]s$'],
   coverageThreshold: {
     global: {
       lines: 90,
